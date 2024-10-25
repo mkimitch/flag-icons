@@ -1,0 +1,13 @@
+@use "variables" as variables;
+
+@mixin flag-icon($country) {
+	.fi-#{$country} {
+		background-image: url(#{variables.$flag-icons-path}#{variables.$flag-icons-rect-path}/#{$country}.svg);
+
+		@if variables.$flag-icons-use-square {
+			&.fis {
+				background-image: url(#{variables.$flag-icons-path}#{variables.$flag-icons-square-path}/#{$country}.svg);
+			}
+		}
+	}
+}
