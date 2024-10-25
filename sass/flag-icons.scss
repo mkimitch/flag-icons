@@ -1,3 +1,4 @@
-@import "variables";
-@import "flag-icons-base";
-@import "flag-icons-list";
+@use "variables";
+@use "mixins";
+@use "flag-icons-base";
+@use "flag-icons-list";

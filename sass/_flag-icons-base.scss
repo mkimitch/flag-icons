@@ -1,31 +1,21 @@
 .fib {
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .fi {
-  @extend .fib;
-  position: relative;
-  display: inline-block;
-  width: 1.333333 * 1em;
-  line-height: 1em;
-  &:before {
-    content: "\00a0";
-  }
-  &.fis {
-    width: 1em;
-  }
-}
+	display: inline-block;
+	line-height: 1em;
+	position: relative;
+	width: 1.333333 * 1em;
+	@extend .fib;
 
-@mixin flag-icon($country) {
-  .fi-#{$country} {
-    background-image: url(#{$flag-icons-path}#{$flag-icons-rect-path}/#{$country}.svg);
+	&::before {
+		content: "\00a0";
+	}
 
-    @if $flag-icons-use-square {
-      &.fis {
-        background-image: url(#{$flag-icons-path}#{$flag-icons-square-path}/#{$country}.svg);
-      }
-    }
-  }
+	&.fis {
+		width: 1em;
+	}
 }
